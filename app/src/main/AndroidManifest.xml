@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.broadcastreceivers">
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ForegroundApp">
+        <activity
+            android:name="com.example.broadcastreceivers.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.ForegroundApp.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Mention the service name here -->
+
+        <receiver android:name="com.example.broadcastreceivers.receivers.AirplaneModeChangeReceiver">
+
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE">
+                </action>
+            </intent-filter>
+
+        </receiver>
+    </application>
+
+</manifest>
